@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
+import Home from "./Home";
+import ProjectsContainer from "./ProjectsContainer";
 
 function App() {
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+
+
+
 
   return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
+  <div className="app">
+    <Home />
+    <ProjectsContainer />
+  </div>
+
   );
 }
 
