@@ -14,7 +14,7 @@ function CreateProjects (){
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        fetch("/projects", {
+        fetch("http://localhost:3000/projects", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
