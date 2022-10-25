@@ -5,4 +5,14 @@ class User < ApplicationRecord
 
     has_many :user_projects
     has_many :projects, through: :user_projects
+    before_save :downcase_email
+    has_secure_password
+
+
+    private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
 end

@@ -8,6 +8,7 @@ function SignupModal({handleShow, show, handleClose}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
 
 
     function handleSubmit(e){
@@ -16,6 +17,7 @@ function SignupModal({handleShow, show, handleClose}){
     const userData = {
         username : username,
         password : password,
+        password_confirmation : confirmPassword,
         email : email
     }
 
@@ -72,6 +74,16 @@ function SignupModal({handleShow, show, handleClose}){
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>  
+        <Form.Group className="mb-3" controlId="confirm-password">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm Password"
+            autoFocus
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </Form.Group> 
          <Button variant="primary" type="submit" >
         Login
       </Button>
