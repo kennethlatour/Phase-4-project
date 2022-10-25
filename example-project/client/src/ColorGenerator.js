@@ -38,7 +38,7 @@ function handleChange (e) {
     return(
         <div>
             <div>
-            <label for="input">Select Color:</label>
+            <label for="input">Selection</label>
             <input onChange ={handleChange} type="color" id ="input" name = "color"  className="color" ></input>
             {/* <label for="input"></label>
             <input type="color" id ="input" name = "color"  className="color" ></input> */}
