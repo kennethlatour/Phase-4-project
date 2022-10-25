@@ -9,4 +9,10 @@
 #color2 {
     background-color: rgb(var(--color-one),var(--color-two),var(--color-three))
 }
+#color3 {
+    background-color: rgb(var(--color-2one),var(--color-2two),var(--color-2three))
+}
+#color4 {
+    background-color: rgb(var(--color-3one),var(--color-3two),var(--color-3three))
+}
 /* var(--color-two) */
