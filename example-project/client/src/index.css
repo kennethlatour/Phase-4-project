@@ -2,6 +2,12 @@
   --color-two: blue;
   --color-one: blue;
   --color-three: blue;
+  --color-2two: blue;
+  --color-2one: blue;
+  --color-2three: blue;
+  --color-3two: blue;
+  --color-3one: blue;
+  --color-3three: blue;
 }
 body {
   margin: 0;
