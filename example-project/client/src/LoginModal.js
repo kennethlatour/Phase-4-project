@@ -13,7 +13,9 @@ function LoginModal({handleShow, show, handleClose}){
     setLoginData({...loginData, [name]: value})
   }
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = (e) => {
+e.preventDefault()
+    console.log("hello")
     fetch("/login", {
       method: "POST",
       headers: {
@@ -59,7 +61,7 @@ function LoginModal({handleShow, show, handleClose}){
                   autoFocus
                 />
               </Form.Group>
-              <Button variant="primary" onClick={handleClose}>
+              <Button variant="primary" type='submit' onClick={handleClose}>
               Login
             </Button>
             </Form>
