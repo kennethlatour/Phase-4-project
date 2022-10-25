@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Home from "./Home";
 import ProjectsContainer from "./ProjectsContainer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
