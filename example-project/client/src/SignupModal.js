@@ -19,11 +19,18 @@ function SignupModal({handleShow, show, handleClose}){
         email : email
     }
 
-    fetch()
+    fetch('http://localhost:3000/users', {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type" : "application/json",
+    },
+    body: JSON.stringify(userData),
+  })
+  .then((r) => r.json())
+  .then((data) => console.log(data))
 }
-    
-
-
     return(
     <> 
     <Button variant="primary" onClick={handleShow}>
@@ -35,7 +42,7 @@ function SignupModal({handleShow, show, handleClose}){
       <Modal.Title>Create Account</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <Form>
+      <Form >
       <Form.Group className="mb-3" controlId="email-address">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
