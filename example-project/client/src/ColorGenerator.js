@@ -7,7 +7,7 @@ function ColorGenerator(){
 function handleChange (e) {
     var compColors = require('complementary-colors');
     const color = new compColors(e.target.value)
-    const setOfColors = color.square()
+    const setOfColors = color.tetradic()
     console.log(setOfColors)
     const first = setOfColors[1]
     const second = setOfColors[2]
@@ -24,11 +24,11 @@ function handleChange (e) {
     document.documentElement.style.setProperty('--color-2two', second2Color )
     const third2Color = second.b
     document.documentElement.style.setProperty('--color-2three', third2Color )
-    const first3Color= second.r
+    const first3Color= third.r
     document.documentElement.style.setProperty('--color-3one', first3Color )
-    const second3Color= second.g
+    const second3Color= third.g
     document.documentElement.style.setProperty('--color-3two', second3Color )
-    const third3Color = second.b
+    const third3Color = third.b
     document.documentElement.style.setProperty('--color-3three', third3Color )
 
 
@@ -38,13 +38,13 @@ function handleChange (e) {
     return(
         <div>
             <div>
-            <label for="input">Select Color:</label>
+            <label for="input">Selection</label>
             <input onChange ={handleChange} type="color" id ="input" name = "color"  className="color" ></input>
-            <label for="input"></label>
-            <input type="color" id ="input" name = "color"  className="color" ></input>
+            {/* <label for="input"></label>
+            <input type="color" id ="input" name = "color"  className="color" ></input> */}
             </div>
             <div className="color" id = "color2" >
-
+            
             </div >
             <div className= "color" id = "color3" >
 

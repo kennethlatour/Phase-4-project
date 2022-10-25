@@ -7,12 +7,12 @@
 }
 
 #color2 {
-    background-color: rgb(var(--color-one),var(--color-two),var(--color-three))
+    background-color: rgb(var(--color-three),var(--color-one),var(--color-two))
 }
 #color3 {
-    background-color: rgb(var(--color-2one),var(--color-2two),var(--color-2three))
+    background-color: rgb(var(--color-2three),var(--color-2two),var(--color-2one))
 }
 #color4 {
-    background-color: rgb(var(--color-3one),var(--color-3two),var(--color-3three))
+    background-color: rgb(var(--color-3three),var(--color-3one),var(--color-3two))
 }
 /* var(--color-two) */
