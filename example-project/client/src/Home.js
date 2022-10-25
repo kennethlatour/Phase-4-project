@@ -1,53 +1,26 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 
 function Home(){
     const [show, setShow] = useState(false);
-
+    const [signupShow, setSignupShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleSignupShow = () => setSignupShow(true)
+    const handleSignupClose = () => setSignupShow(false);
 //Will have a signup and login modal
-    return(
-            <>
-              <Button variant="primary" onClick={handleShow}>
-                Login / Signup
-              </Button>
-        
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Form>
-                    <Form.Group className="mb-3" controlId="email-address">
-                      <Form.Label>Email address</Form.Label>
-                      <Form.Control
-                        type="email"
-                        placeholder="name@example.com"
-                        autoFocus
-                      />
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlTextarea1"
-                    >
-                      <Form.Label>Example textarea</Form.Label>
-                      <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                  </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            </>
+    return(<>
+            <LoginModal 
+            show={show}
+            handleClose={handleClose}
+           handleShow={handleShow}/>
+           <SignupModal
+           show={signupShow}
+            handleClose={handleSignupClose}
+           handleShow={handleSignupShow}/>
+           
+           </>
           );
     
 }
