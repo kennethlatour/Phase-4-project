@@ -21,16 +21,17 @@ function SignupModal({handleShow, show, handleClose}){
         email : email
     }
 
-    fetch('/users', {
-    method: "POST",
-    headers: {
-      "Content-Type" : "application/json",
+    fetch('/signup', {
+      method: "POST",
+      headers: {
+       "Content-Type" : "application/json",
     },
-    body: JSON.stringify(userData),
-  })
-  .then((r) => r.json())
-  .then((data) => console.log(data))
-}
+      body: JSON.stringify(userData),
+    })
+    .then((r) => r.json())
+    .then((data) => console.log(data))
+    }
+    
     return(
     <> 
     <Button variant="primary" onClick={handleShow}>
@@ -85,16 +86,11 @@ function SignupModal({handleShow, show, handleClose}){
           />
         </Form.Group> 
          <Button variant="primary" type="submit" >
-        Login
+        Sign up
       </Button>
       </Form>
       
     </Modal.Body>
-    <Modal.Footer>
-      <Button variant="primary" type="submit" onSubmit={(e) => handleSubmit(e)}>
-        Login
-      </Button>
-    </Modal.Footer>
   </Modal>
 </>
 
