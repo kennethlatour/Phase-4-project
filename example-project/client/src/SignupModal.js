@@ -32,7 +32,7 @@ function SignupModal({handleShow, show, handleClose}){
     return(
     <> 
     <Button variant="primary" onClick={handleShow}>
-    Create Account
+    Sign up
   </Button>
 
   <Modal show={show} onHide={handleClose}>
@@ -79,7 +79,9 @@ function SignupModal({handleShow, show, handleClose}){
       
     </Modal.Body>
     <Modal.Footer>
-   
+      <Button variant="primary" type="submit" onSubmit={(e) => handleSubmit(e)}>
+        Login
+      </Button>
     </Modal.Footer>
   </Modal>
 </>
