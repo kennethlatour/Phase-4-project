@@ -7,7 +7,8 @@
 }
 
 #color2 {
-    background-color: rgb(var(--color-three),var(--color-one),var(--color-two))
+    background-color: #742a2a
+
 }
 #color3 {
     background-color: rgb(var(--color-2three),var(--color-2two),var(--color-2one))

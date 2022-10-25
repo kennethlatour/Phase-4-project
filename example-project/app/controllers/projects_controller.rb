@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.permit(:name, :color)
+        params.permit(:name, :description, :red, :green, :blue, :thumbnail)
     end
 
     def find_project

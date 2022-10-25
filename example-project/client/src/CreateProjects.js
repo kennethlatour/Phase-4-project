@@ -3,7 +3,19 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function CreateProjects (){
-    const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", color: ""})
+
+    const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", red: "", green: "", blue: ""})
+    
+
+    function handleChange (e) {
+        var compColors = require('complementary-colors');
+         const chosenColor = new compColors(e.target.value)
+         const colorArray = chosenColor.primary()
+         const color = colorArray[0] 
+        
+        setFormData({...formData,  red: color.r, green: color.g, blue: color.b})
+
+    }
 
     const handleFormChange = (event) => {
         const name = event.target.name
@@ -12,6 +24,8 @@ function CreateProjects (){
         setFormData({...formData, [name]: value})
     }
 
+
+    
     const handleFormSubmit = (event) => {
         event.preventDefault()
         fetch("/projects", {
@@ -40,11 +54,17 @@ function CreateProjects (){
                     <Form.Control type="text" name="thumbnail" value={formData.thumbnail} onChange={handleFormChange} placeholder='Thumbnail'/>
                 </Form.Group>
                 <Form.Group className="mb-3" id="color-gen">
-                    {/* input color generator */}
+                <div id = "colorgenerator">
+            <label for="input">Selection</label>
+            <input onChange = {handleChange} type="color" id ="input"  className="color"></input>
+         
+            </div>
                 </Form.Group>
+             
                 <Button variant="primary" type="submit">
                      Create
                 </Button>
+                
             </Form>
         </div>
     )
