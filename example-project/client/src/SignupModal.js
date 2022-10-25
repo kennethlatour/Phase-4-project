@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
 
 function SignupModal({handleShow, show, handleClose}){
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+
+
+    function handleSubmit(e){
+    e.preventDefault()
+
+    const userData = {
+        username : username,
+        password : password,
+        email : email
+    }
+
+    fetch()
+}
+    
 
 
     return(
@@ -25,6 +42,8 @@ function SignupModal({handleShow, show, handleClose}){
             type="email"
             placeholder="name@account.com"
             autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
         
@@ -34,21 +53,25 @@ function SignupModal({handleShow, show, handleClose}){
             type="username"
             placeholder="Username"
             autoFocus
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="username"
+            type="password"
             placeholder="Password"
             autoFocus
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
       
       </Form>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="primary" onClick={handleClose}>
+      <Button variant="primary" type="submit" onSubmit={(e) => handleSubmit(e)}>
         Login
       </Button>
     </Modal.Footer>
