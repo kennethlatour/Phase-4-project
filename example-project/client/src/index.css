@@ -1,13 +1,13 @@
 :root {
-  --color-two: blue;
-  --color-one: blue;
-  --color-three: blue;
-  --color-2two: blue;
-  --color-2one: blue;
-  --color-2three: blue;
-  --color-3two: blue;
-  --color-3one: blue;
-  --color-3three: blue;
+  --color-two: ;
+  --color-one: ;
+  --color-three: ;
+  --color-2two: ;
+  --color-2one: ;
+  --color-2three: ;
+  --color-3two: ;
+  --color-3one: ;
+  --color-3three: ;
 }
 body {
   margin: 0;
