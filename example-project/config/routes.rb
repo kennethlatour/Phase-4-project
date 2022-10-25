@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :project_files
+  resources :images
   resources :projects, only: [:create, :index, :show, :destroy, :update]
   resources :user_projects, only: [:create, :index, :show, :destroy, :update]
   resources :users, only: [:create, :index, :show, :destroy, :update]
