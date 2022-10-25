@@ -19,10 +19,8 @@ function SignupModal({handleShow, show, handleClose}){
         email : email
     }
 
-    fetch('http://localhost:3000/users', {
+    fetch('/users', {
     method: "POST",
-    mode: "cors",
-    cache: "no-cache",
     headers: {
       "Content-Type" : "application/json",
     },
@@ -42,7 +40,7 @@ function SignupModal({handleShow, show, handleClose}){
       <Modal.Title>Create Account</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <Form >
+      <Form onSubmit={(e) => handleSubmit(e)}>
       <Form.Group className="mb-3" controlId="email-address">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -73,14 +71,15 @@ function SignupModal({handleShow, show, handleClose}){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
-      
-      </Form>
-    </Modal.Body>
-    <Modal.Footer>
-      <Button variant="primary" type="submit" onSubmit={(e) => handleSubmit(e)}>
+        </Form.Group>  
+         <Button variant="primary" type="submit" >
         Login
       </Button>
+      </Form>
+      
+    </Modal.Body>
+    <Modal.Footer>
+   
     </Modal.Footer>
   </Modal>
 </>
