@@ -11,29 +11,31 @@ function Home(){
     const handleSignupShow = () => setSignupShow(true)
     const handleSignupClose = () => setSignupShow(false);
 //Will have a signup and login modal
-    return (
-        <>
-        <div className="overlay" id = "login">
-            <div class = "vertical-center">
-            
-            <LoginModal 
-            show={show}
-            handleClose={handleClose}
-            handleShow={handleShow}
-            />
-            
-            <SignupModal
-            show={signupShow}
-            handleClose={handleSignupClose}
-            handleShow={handleSignupShow}
-            />
-            
-            </div>
+return (
+    <>
+    <div id = "login">
+        <div class = "vertical-center">
+        <SignupModal
+        show={signupShow}
+        handleClose={handleSignupClose}
+        handleShow={handleSignupShow}
+        handleLogin={handleLogin}
+        />
+        <div class = "vertical-center">
+        <LoginModal 
+        show={show}
+        handleClose={handleClose}
+        handleShow={handleShow}
+        handleLogin={handleLogin}
+        />
         </div>
-          
-        </>
-    );
-    
+        
+        </div>
+    </div>
+      
+    </>
+);
+
 }
 
 export default Home;
