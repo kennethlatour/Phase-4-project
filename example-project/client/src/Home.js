@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import CreateProjects from './CreateProjects';
+import './App.css'
 function Home(){
     const [show, setShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
@@ -12,17 +13,23 @@ function Home(){
 //Will have a signup and login modal
     return (
         <>
-            <LoginModal 
-            show={show}
-            handleClose={handleClose}
-            handleShow={handleShow}
-            />
+        <div id = "login">
+            <div class = "vertical-center">
             <SignupModal
             show={signupShow}
             handleClose={handleSignupClose}
             handleShow={handleSignupShow}
             />
-
+            <div class = "vertical-center">
+            <LoginModal 
+            show={show}
+            handleClose={handleClose}
+            handleShow={handleShow}
+            />
+            </div>
+            
+            </div>
+        </div>
           
         </>
     );
