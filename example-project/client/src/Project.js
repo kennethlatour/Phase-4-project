@@ -3,19 +3,31 @@ import React, {useEffect, useState} from "react";
 
 function Project(){
     const { id } = useParams()
-    const [ projects, setProjects ] = useState([])
+    const [ project, setProject ] = useState([])
+    const [ userData, setUserData ] = useState({username: "", email: ""})
+    // const [ showCollab, setShowCollab ] = useState([])
    
     useEffect(() => {
-        fetch(`http://localhost:9292/projects/${id}`)
+        fetch(`/projects/${id}`)
         .then(res => res.json())
-        .then(projects => {
-        setProjects(projects)
+        .then(project => {
+        setProject(project)
         })
       }, [])
 
+     const handleChange = () => {
+        
+     }
+
     return(
         <div>
-            
+           <button>Add Collaborators</button>
+           <div>
+            <form onChange={handleChange}>
+                <input type="text" name="username" value={userData.username} placeholder="Username"/>
+                <input type="submit" value="Add"/>
+            </form>
+           </div>
         </div>
     )
 }
