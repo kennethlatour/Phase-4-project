@@ -19,8 +19,8 @@ function Projects({project, handleCardClick}){
         <div onClick={() => handleCardClick(project.id)} className="project">
             <h3>{project.name}</h3>
             <img src={project.thumbnail} alt="thumbnail"/> 
-            <p>{project.description}</p> 
-            <p>Contributers: {projectContributers}</p> 
+            {/* <p>{project.description}</p> 
+            <p>Contributers: {projectContributers}</p>  */}
           
             {/* <button onClick={() => deleteProject(project.id)}>Delete</button> */}
         </div>
