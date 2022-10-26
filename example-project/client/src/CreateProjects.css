@@ -1,5 +1,5 @@
 .project-form-page  {
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -12,6 +12,8 @@
 
 .project-form {
     width: 500px;
+    margin-left: 30px;
+    float: left;
 }
 
 .project-form .color {
@@ -27,6 +29,5 @@
 }
 
 .project-form #create {
-    /* padding-top: 10px; */
-    padding-left: 360px 
+    padding-left: 350px;
 }
