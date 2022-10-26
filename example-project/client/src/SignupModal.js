@@ -35,7 +35,7 @@ function SignupModal({handleShow, show, handleClose}){
     return(
     <> 
     <Button variant="primary" onClick={handleShow}>
-    Sign up
+    Create Account
   </Button>
 
   <Modal show={show} onHide={handleClose}>
@@ -86,7 +86,7 @@ function SignupModal({handleShow, show, handleClose}){
           />
         </Form.Group> 
          <Button variant="primary" type="submit" >
-        Sign up
+        Create Account
       </Button>
       </Form>
       
