@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CreateProjects from "./CreateProjects";
 import Projects from "./Projects";
-
+import "./ProjectsContainer.css"
 
 
 function ProjectsContainer(){
@@ -21,7 +21,10 @@ function ProjectsContainer(){
 
   return(
         <div>
+            <div className="projects">
             {showProjects}
+            </div>
+           
             <CreateProjects />
         </div>
     )
