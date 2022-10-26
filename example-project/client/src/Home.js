@@ -14,7 +14,7 @@ function Home( { handleLogin } ){
 //Will have a signup and login modal
     return (
         <>
-        <div id = "login">
+        <div className= "overlay" id = "login">
             <div class = "vertical-center">
             <SignupModal
             show={signupShow}
