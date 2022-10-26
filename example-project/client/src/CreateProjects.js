@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './App.css'
 
-function CreateProjects (){
-
+function CreateProjects ({currentUser}){
     const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", red: "", green: "", blue: ""})
     
+    console.log(currentUser)
 
     function handleChange (e) {
         var compColors = require('complementary-colors');
@@ -15,7 +15,6 @@ function CreateProjects (){
          const color = colorArray[0] 
         
         setFormData({...formData,  red: color.r, green: color.g, blue: color.b})
-
     }
 
     const handleFormChange = (event) => {
@@ -30,12 +29,30 @@ function CreateProjects (){
     const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log(formData)
+        let id 
         fetch("/projects", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData)
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            id = data.id
+        })
+
+        const userProject = {
+            project_id: id,
+            username: currentUser.username
+        }
+
+        fetch("/user_project", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userProject)
         })
         .then((res) => res.json())
         .then((data) => console.log(data))

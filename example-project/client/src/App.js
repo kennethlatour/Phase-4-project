@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 function App() {
   const [currentUser, setCurrentUser] = useState({})
   const history = useHistory()
+  
   function handleLogin(user){
     history.push(`/projects`)
     setCurrentUser(user)
@@ -24,7 +25,7 @@ function App() {
         <Home handleLogin={handleLogin} />
       </Route>
       <Route exact path="/projects">
-        <ProjectsContainer />
+        <ProjectsContainer currentUser={currentUser}/>
       </Route>
       <Route exact path="/projects/:id">
         <Project/>

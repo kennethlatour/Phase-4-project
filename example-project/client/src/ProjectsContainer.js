@@ -7,7 +7,7 @@ import Projects from "./Projects";
 import "./ProjectsContainer.css"
 
 
-function ProjectsContainer(){
+function ProjectsContainer({currentUser}){
     const [ projects, setProjects ] = useState([])
     const history = useHistory();
 
@@ -47,7 +47,7 @@ function ProjectsContainer(){
             {showProjects}
             </div>
            
-            <CreateProjects />
+            <CreateProjects currentUser={currentUser}/>
         </div>
     )
 }
