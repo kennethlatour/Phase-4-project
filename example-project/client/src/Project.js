@@ -31,7 +31,10 @@ function Project(){
       }, [])
 
       
-      
+    
+      const updateImages = (image) => {
+        setImages([...images, image])
+      }
 
      const handleChange = (event) => {
         const name = event.target.name
@@ -96,7 +99,7 @@ function Project(){
                 : null }
             </div>
             <div>
-                <Images images={images} />
+                <Images images={images} projectId={project.id} updateImages={updateImages}/>
             </div>
             <div>
                 <button onClick={() => deleteProject(project.id)}>Delete</button> 
