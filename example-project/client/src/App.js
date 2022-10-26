@@ -4,6 +4,7 @@ import ProjectsContainer from "./ProjectsContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
+
 function App() {
 
 
@@ -14,9 +15,6 @@ function App() {
   <div className="app">
     <Home />
     <ProjectsContainer />
-    <div className= "color2">
-
-     </div>
 
   </div>
      
