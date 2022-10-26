@@ -1,0 +1,29 @@
+.project-form-page  {
+    margin-top: 200px;
+    padding: 20px;
+}
+
+.project-form-page h2{
+    font-size: 32px;
+}
+
+.project-form {
+    width: 450px;
+}
+
+.project-form .color {
+    width: 450px;
+    height: 80px;
+    padding-left: 0;
+}
+
+.project-form p {
+    font-size: 20px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.project-form #create {
+    padding-top: 20px;
+    padding-left: 360px 
+}

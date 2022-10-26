@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import FormGroup from 'react-bootstrap/esm/FormGroup';
 import Form from 'react-bootstrap/Form';
 import './App.css'
+import "./CreateProjects.css"
 
-function CreateProjects (){
-
+function CreateProjects ({currentUser}){
     const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", red: "", green: "", blue: ""})
     
+    console.log(currentUser)
 
     function handleChange (e) {
         var compColors = require('complementary-colors');
@@ -15,7 +17,6 @@ function CreateProjects (){
          const color = colorArray[0] 
         
         setFormData({...formData,  red: color.r, green: color.g, blue: color.b})
-
     }
 
     const handleFormChange = (event) => {
@@ -29,7 +30,8 @@ function CreateProjects (){
     
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        console.log(formData)
+       
+        let id 
         fetch("/projects", {
             method: "POST",
             headers: {
@@ -38,7 +40,26 @@ function CreateProjects (){
             body: JSON.stringify(formData)
         })
         .then((res) => res.json())
+        .then((data) => {
+            id = data.id
+            const userProject = {
+                project_id: id,
+                username: currentUser.username
+            }
+
+        fetch("/user_projects", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userProject)
+        })
+        .then((res) => res.json())
         .then((data) => console.log(data))
+        })
+
+       
+
     }
 
 
@@ -56,14 +77,17 @@ function CreateProjects (){
                     <Form.Control type="text" name="thumbnail" value={formData.thumbnail} onChange={handleFormChange} placeholder='Thumbnail'/>
                 </Form.Group>
                 <Form.Group className="mb-3" id="color-gen">
-                <div id = "colorgenerator">
-            <label for="input"> <h2>Color Picker</h2> </label>
-            <input onChange = {handleChange} type="color" id ="input"  className="color"></input>
-            <Button id = "create" variant="primary" type="submit">
-                     <h2>Create</h2>
-                </Button>
-                
-            </div>
+         
+                <Form.Group>
+                    <label for="input"> <p>Color Picker</p> </label>
+                    <Form.Control onChange = {handleChange} type="color" id ="input" className="color"/>
+                </Form.Group>
+                <FormGroup>
+                    <Button id = "create" variant="primary" type="submit">
+                        <h2>Create</h2>
+                    </Button>
+                </FormGroup>
+       
                 </Form.Group>
              
                

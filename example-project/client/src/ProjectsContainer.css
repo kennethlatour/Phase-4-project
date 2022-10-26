@@ -4,11 +4,21 @@
     list-style-type: none;
     align-items: center;
     padding-left: 13.5%;
+    display: flex;
 }
+
 .projectsContainer {
-    width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-color: whitesmoke;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
+  display: flex;
 }
+
+.create-project {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
