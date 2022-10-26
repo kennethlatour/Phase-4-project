@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
-import Photos from './Photos';
+import Images from './Images';
 import { useHistory } from 'react-router-dom'
 
 function Project(){
@@ -94,7 +94,7 @@ function Project(){
                 : null }
             </div>
             <div>
-                <Photos />
+                <Images />
             </div>
             <div>
                 <button onClick={() => deleteProject(project.id)}>Delete</button> 
