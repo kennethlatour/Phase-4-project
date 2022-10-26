@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
 import Images from './Images';
 import { useHistory } from 'react-router-dom'
+import './Project.css'
+
 
 function Project(){
     const { id } = useParams()
@@ -13,8 +15,16 @@ function Project(){
     const [ images, setImages ] = useState([])
     const history = useHistory()
     const [colors, setColors] = useState ({red: "", green: "", blue: ""})
+    const [colorBox, setColorBox] = useState("#D3D3D3")
     // const [ showCollab, setShowCollab ] = useState([])
+    
+       
+            document.documentElement.style.setProperty('--color-one', project.red )
+            document.documentElement.style.setProperty('--color-two', project.green )
+            document.documentElement.style.setProperty('--color-three', project.blue ) 
+       
    
+
     useEffect(() => {
         fetch(`/projects/${id}`)
         .then(res => res.json())
@@ -32,6 +42,7 @@ function Project(){
       }, [])
 
     function editColor (e) {
+        setColorBox(e.target.value)
         var compColors = require('complementary-colors');
          const chosenColor = new compColors(e.target.value)
          const colorArray = chosenColor.primary()
@@ -103,11 +114,11 @@ function Project(){
     }   
 
     return(
-        <div>
+        <div className = "projectCont">
             <h1>{project.name}</h1>
             <h5>{project.description}</h5>
             <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
-            <button onClick={() => setShowCollab(true)}>Add Collaborators</button>
+            <button class = "btn-primary" onClick={() => setShowCollab(true)}>Add Collaborators</button>
             <div>
                 {showCollab ?
                 <div>  
@@ -128,9 +139,9 @@ function Project(){
                 <Images images={images} projectId={project.id} updateImages={updateImages}/>
             </div>
             <div>
-                <button onClick={() => deleteProject(project.id)}>Delete</button> 
-                <input onChange = {editColor} type="color" id ="input" name = "color"  className="color" ></input>
-                <button onClick={patchColor}> Edit Color </button>
+                <button  class = "btn-primary" onClick={() => deleteProject(project.id)}>Delete</button> 
+                <input onChange = {editColor} type="color" id ="input" name = "color" value={colorBox}  className="color" ></input>
+                <button class = "btn-primary" onClick={patchColor}> Edit Color </button>
             </div>
         </div>
     )
