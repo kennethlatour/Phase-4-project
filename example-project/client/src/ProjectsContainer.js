@@ -41,7 +41,7 @@ function ProjectsContainer({currentUser}){
     ))
 
   return(
-        <div>
+        <div className="project-container">
             <NavigationBar handleDelete={handleDelete}/>
             <div className="projects">
             {showProjects}

@@ -65,8 +65,9 @@ function CreateProjects ({currentUser}){
 
     return(
         <div className="project-form-page">
-            <h2>Build a Visual</h2>
+           
             <Form className="project-form" onSubmit={handleFormSubmit}>
+            <h2>Build a Visual</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="text" name="name" value={formData.name} onChange={handleFormChange} placeholder="Project name"/>
                 </Form.Group>

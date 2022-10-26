@@ -1,18 +1,21 @@
 .project-form-page  {
-    margin-top: 200px;
+    margin-top: 50px;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .project-form-page h2{
-    font-size: 32px;
+    font-size: 34px;
+    margin-bottom: 20px;
 }
 
 .project-form {
-    width: 450px;
+    width: 500px;
 }
 
 .project-form .color {
-    width: 450px;
+    width: 200px;
     height: 80px;
     padding-left: 0;
 }
@@ -24,6 +27,6 @@
 }
 
 .project-form #create {
-    padding-top: 20px;
+    /* padding-top: 10px; */
     padding-left: 360px 
 }

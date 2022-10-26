@@ -21,7 +21,7 @@ project1 = Project.create(name:'Halloweeny', description: 'Halloween app to buy 
 project2 = Project.create(name:'Google', description: 'A search engine to find anything', thumbnail: 'https://cdn.searchenginejournal.com/wp-content/uploads/2021/08/great-search-engines-612f8f78d1f79-sej-1520x800.jpg', red: 22, green: 233, blue: 85)
 project3 = Project.create(name:'munchies', description: 'A yelp improved', thumbnail: 'https://play-lh.googleusercontent.com/n0X5iAO_8ToPhrDQPp4iLyg4D3Yrcb7KtQycs0QQZsKiZsLszLEBBoPdyK7xuqLXpg', red: 22, green: 233, blue: 85)
 project4 = Project.create(name:'victory', description: 'Fitness you can track', thumbnail: 'https://post.healthline.com/wp-content/uploads/2021/04/Feel-good-fitness-hub732x549-thumbnail.jpg', red: 22, green: 233, blue: 85)
-project5 = Project.create(name:'New Forntier', description: 'Gaming in space', thumbnail: 'https://cdn.sanity.io/images/2yyup5mx/production/d5a915cd9db3444998926f61645b6f83a53aced0-5000x2813.jpg', red: 22, green: 233, blue: 85)
+project5 = Project.create(name:'New Frontier', description: 'Gaming in space', thumbnail: 'https://cdn.sanity.io/images/2yyup5mx/production/d5a915cd9db3444998926f61645b6f83a53aced0-5000x2813.jpg', red: 22, green: 233, blue: 85)
 
 project_user1 = UserProject.create(project: project1, user: user1)
 project_user2 = UserProject.create(project: project1, user: user2)
