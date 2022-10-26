@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
 
     def index
-        projects = Project.all
+        user = User.find(session[:user_id])
+        projects = user.projects
         render json: projects, status: :ok
       end
     
