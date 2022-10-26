@@ -1,8 +1,10 @@
 export default function Photos () {
-
+    
     return (
         <div>
-            <button></button>
+            <button>
+                Add Photo
+            </button>
         </div>
     )
 }

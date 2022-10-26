@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
+import Photos from './Photos';
+import { useHistory } from 'react-router-dom'
 
 function Project(){
     const { id } = useParams()
@@ -8,6 +10,7 @@ function Project(){
     const [ errors , setErrors] = useState([])
     const [ collaborators, setCollaborators ] = useState([])
     const [ showCollab, setShowCollab ] = useState(false)
+    const history = useHistory()
     // const [ showCollab, setShowCollab ] = useState([])
    
     useEffect(() => {
@@ -63,7 +66,13 @@ function Project(){
 
      }
 
-     console.log(errors)
+     const deleteProject = (id) => {
+        fetch(`/projects/${id}`, {
+            method: "DELETE",
+        }).then((res) => {
+            history.push('/projects')
+        })
+    }   
 
     return(
         <div>
@@ -83,7 +92,13 @@ function Project(){
                     ))}
                 </div>
                 : null }
-           </div>
+            </div>
+            <div>
+                <Photos />
+            </div>
+            <div>
+                <button onClick={() => deleteProject(project.id)}>Delete</button> 
+            </div>
         </div>
     )
 }
