@@ -14,7 +14,7 @@ function LoginModal({handleShow, show, handleClose, handleLogin}){
   }
 
   const handleOnSubmit = (e) => {
-e.preventDefault()
+    e.preventDefault()
     console.log("hello")
     fetch("/login", {
       method: "POST",
@@ -22,10 +22,14 @@ e.preventDefault()
           "Content-Type": "application/json",
       },
       body: JSON.stringify(loginData)
-  })
-  .then((res) => res.json())
-  .then((data) => {console.log(data)
-    handleLogin()})
+    })
+    .then((res) => {
+      if(res.ok) {
+        res.json().then(user => {
+          handleLogin(user)
+      })
+      }else{res.json().then(json => setErrors(json.errors))} 
+    })
   }
 
 

@@ -15,7 +15,6 @@ function Home(){
     const history = useHistory()
 
     function handleLogin(){
-
         history.push(`/projects`)
       }
     return (
