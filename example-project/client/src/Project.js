@@ -12,6 +12,7 @@ function Project(){
     const [ showCollab, setShowCollab ] = useState(false)
     const [ images, setImages ] = useState([])
     const history = useHistory()
+    const [colors, setColors] = useState ({red: "", green: "", blue: ""})
     // const [ showCollab, setShowCollab ] = useState([])
    
     useEffect(() => {
@@ -30,7 +31,29 @@ function Project(){
         })
       }, [])
 
-      
+    function editColor (e) {
+        var compColors = require('complementary-colors');
+         const chosenColor = new compColors(e.target.value)
+         const colorArray = chosenColor.primary()
+         const c = colorArray[0] 
+
+        setColors({red: c.r, green: c.g, blue: c.b})
+    }
+
+    function patchColor () {
+            fetch(`/projects/${id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json" 
+                    },
+                    body: JSON.stringify(colors)
+                })
+                .then(res => res.json())
+                .then(data => console.log(data))
+               
+        }
+    
     
       const updateImages = (image) => {
         setImages([...images, image])
@@ -100,11 +123,14 @@ function Project(){
                 </div>
                 : null }
             </div>
+        
             <div>
                 <Images images={images} projectId={project.id} updateImages={updateImages}/>
             </div>
             <div>
                 <button onClick={() => deleteProject(project.id)}>Delete</button> 
+                <input onChange = {editColor} type="color" id ="input" name = "color"  className="color" ></input>
+                <button onClick={patchColor}> Edit Color </button>
             </div>
         </div>
     )
