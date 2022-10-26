@@ -15,7 +15,7 @@ function Home( { handleLogin } ){
     return (
         <>
         <div className= "overlay" id = "login">
-            <div class = "vertical-center">
+            <div className = "vertical-center">
             <SignupModal
             show={signupShow}
             handleClose={handleSignupClose}
