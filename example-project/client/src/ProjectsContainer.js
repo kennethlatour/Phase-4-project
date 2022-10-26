@@ -46,8 +46,10 @@ function ProjectsContainer({currentUser}){
             <div className="projects">
             {showProjects}
             </div>
-           
-            <CreateProjects currentUser={currentUser}/>
+           <div className="create-project">
+                <CreateProjects currentUser={currentUser}/>
+           </div>
+            
         </div>
     )
 }
