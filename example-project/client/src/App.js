@@ -10,12 +10,12 @@ import { useHistory } from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
-
+  const history = useHistory()
   function handleLogin(user){
     history.push(`/projects`)
     setCurrentUser(user)
   }
-  const history = useHistory()
+ 
 
   return (
   <div className="overlay">

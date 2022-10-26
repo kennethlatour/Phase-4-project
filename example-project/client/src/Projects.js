@@ -12,6 +12,8 @@ function Projects({project, handleCardClick}){
     //         method: "DELETE",
     //     })
     // }   
+ 
+     
 
    const projectContributers = project.users.map((user) => <p>{user.username}</p>)
 
