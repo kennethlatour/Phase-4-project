@@ -13,20 +13,20 @@ function Home(){
 //Will have a signup and login modal
     return (
         <>
-        <div id = "login">
+        <div className="overlay" id = "login">
             <div class = "vertical-center">
-            <SignupModal
-            show={signupShow}
-            handleClose={handleSignupClose}
-            handleShow={handleSignupShow}
-            />
-            <div class = "vertical-center">
+            
             <LoginModal 
             show={show}
             handleClose={handleClose}
             handleShow={handleShow}
             />
-            </div>
+            
+            <SignupModal
+            show={signupShow}
+            handleClose={handleSignupClose}
+            handleShow={handleSignupShow}
+            />
             
             </div>
         </div>

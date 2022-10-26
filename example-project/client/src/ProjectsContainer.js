@@ -25,10 +25,11 @@ function ProjectsContainer(){
     ))
 
   return(
-        <div>
-            <div className="projects">
+
+        <div className = "projectsContainer">
+            <ul className="projects">
             {showProjects}
-            </div>
+            </ul>
            
             <CreateProjects />
         </div>
