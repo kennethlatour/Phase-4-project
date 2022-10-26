@@ -20,12 +20,14 @@ function Home( { handleLogin } ){
             show={signupShow}
             handleClose={handleSignupClose}
             handleShow={handleSignupShow}
+            handleLogin={handleLogin}
             />
             <div className= "vertical-center">
             <LoginModal 
             show={show}
             handleClose={handleClose}
             handleShow={handleShow}
+            handleLogin={handleLogin}
             />
             </div>
             
