@@ -28,7 +28,7 @@ function LoginModal({handleShow, show, handleClose, handleLogin}){
         res.json().then(user => {
           handleLogin(user)
       })
-      }else{res.json().then(json => setErrors(json.errors))} 
+      }else{res.json().then(json => console.log(json.errors))} 
     })
   }
 
