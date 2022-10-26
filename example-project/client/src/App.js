@@ -13,10 +13,8 @@ function App() {
   return (
   <div className="app">
     <Home />
+    
     <ProjectsContainer />
-    <div className= "color2">
-
-     </div>
 
   </div>
      

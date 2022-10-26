@@ -1,13 +1,17 @@
 import CreateProjects from "./CreateProjects";
 import Projects from "./Projects";
 
+
 function ProjectsContainer(){
 
 
     return(
-        <div>
+        <div>   
             <Projects />
+        
+    
             <CreateProjects />
+                   
         </div>
     )
 }
