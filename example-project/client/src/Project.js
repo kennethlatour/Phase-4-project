@@ -68,22 +68,21 @@ function Project(){
     return(
         <div>
             <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
-           <button onClick={() => setShowCollab(true)}>Add Collaborators</button>
-           <div>
-            {showCollab ?
-            <div>  
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="username" value={userData.username} onChange={handleChange} placeholder="Username"/>
-                <input type="submit" value="Add"/>
-            </form>
-            {errors.map((err) => (
-                <p key={err} style={{ color: "red" }}>
-                    {err}
-                </p>
-            ))}
-            </div>
-            : null }
-    
+            <button onClick={() => setShowCollab(true)}>Add Collaborators</button>
+            <div>
+                {showCollab ?
+                <div>  
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="username" value={userData.username} onChange={handleChange} placeholder="Username"/>
+                        <input type="submit" value="Add"/>
+                    </form>
+                    {errors.map((err) => (
+                        <p key={err} style={{ color: "red" }}>
+                            {err}
+                        </p>
+                    ))}
+                </div>
+                : null }
            </div>
         </div>
     )
