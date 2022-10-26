@@ -8,6 +8,7 @@ function SignupModal({handleShow, show, handleClose}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
 
 
     function handleSubmit(e){
@@ -16,25 +17,25 @@ function SignupModal({handleShow, show, handleClose}){
     const userData = {
         username : username,
         password : password,
+        password_confirmation : confirmPassword,
         email : email
     }
 
-    fetch('http://localhost:3000/users', {
-    method: "POST",
-    mode: "cors",
-    cache: "no-cache",
-    headers: {
-      "Content-Type" : "application/json",
+    fetch('/signup', {
+      method: "POST",
+      headers: {
+       "Content-Type" : "application/json",
     },
-    body: JSON.stringify(userData),
-  })
-  .then((r) => r.json())
-  .then((data) => console.log(data))
-}
+      body: JSON.stringify(userData),
+    })
+    .then((r) => r.json())
+    .then((data) => console.log(data))
+    }
+    
     return(
     <> 
     <Button variant="primary" onClick={handleShow}>
-    Create Account
+    Sign up
   </Button>
 
   <Modal show={show} onHide={handleClose}>
@@ -42,7 +43,7 @@ function SignupModal({handleShow, show, handleClose}){
       <Modal.Title>Create Account</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <Form >
+      <Form onSubmit={(e) => handleSubmit(e)}>
       <Form.Group className="mb-3" controlId="email-address">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -73,15 +74,23 @@ function SignupModal({handleShow, show, handleClose}){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
-      
-      </Form>
-    </Modal.Body>
-    <Modal.Footer>
-      <Button variant="primary" type="submit" onSubmit={(e) => handleSubmit(e)}>
-        Login
+        </Form.Group>  
+        <Form.Group className="mb-3" controlId="confirm-password">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm Password"
+            autoFocus
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </Form.Group> 
+         <Button variant="primary" type="submit" >
+        Sign up
       </Button>
-    </Modal.Footer>
+      </Form>
+      
+    </Modal.Body>
   </Modal>
 </>
 
