@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useParams } from 'react-router-dom'
+import './Project.css'
 
 export default function Images ({images, updateImages}) {
     const { id } = useParams()
@@ -33,7 +34,7 @@ export default function Images ({images, updateImages}) {
 
     return (
         <div>
-            <button onClick={()=>setShowAddImage(true)}>Add Images</button>
+            <button class = "btn-primary" onClick={()=>setShowAddImage(true)}>Add Images</button>
             {showAddImage ?
             <div>
             <form onChange={handleChange} onSubmit={submitImage}>
@@ -47,7 +48,7 @@ export default function Images ({images, updateImages}) {
 
             <div className="image-container">
                 {images.map((image) => (
-                    <img src={image.url}/>
+                    <img class = "images" src={image.url}/>
                 ))}
             </div>
     

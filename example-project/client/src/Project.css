@@ -1,0 +1,36 @@
+.projectCont {
+    color: rgb(var(--color-one),var(--color-two),var(--color-three));
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn-primary {
+    background-color: rgba(95, 95, 95, 0);
+    border-width: 0em;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(var(--color-one),var(--color-two),var(--color-three));
+    border-radius: 0%;
+    font-style: italic;
+    font-size: 325%;
+    text-align: right;
+   
+    
+  }
+ .btn-primary:hover{
+    background-color: rgba(95, 95, 95, 0);
+    color: rgba(95, 95, 95, 0.953);
+  }
+
+  .images {
+    width: 200px;
+    height:auto;
+    border-radius: 10%;
+  }
+ 
+.image-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

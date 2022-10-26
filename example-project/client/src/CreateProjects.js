@@ -7,10 +7,11 @@ import "./CreateProjects.css"
 
 function CreateProjects ({currentUser}){
     const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", red: "", green: "", blue: ""})
-    
+    const [colorBox, setColorBox] = useState("#D3D3D3")
     console.log(currentUser)
 
     function handleChange (e) {
+        setColorBox(e.target.value)
         var compColors = require('complementary-colors');
          const chosenColor = new compColors(e.target.value)
          const colorArray = chosenColor.primary()
@@ -81,7 +82,7 @@ function CreateProjects ({currentUser}){
          
                 <Form.Group>
                     <label for="input"> <p>Color Picker</p> </label>
-                    <Form.Control onChange = {handleChange} type="color" id ="input" className="color"/>
+                    <Form.Control onChange = {handleChange} type="color" id ="input" value={colorBox} className="color"/>
                 </Form.Group>
                 <FormGroup>
                     <Button id = "create" variant="primary" type="submit">
