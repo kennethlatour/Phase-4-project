@@ -21,7 +21,7 @@ function Home( { handleLogin } ){
             handleClose={handleSignupClose}
             handleShow={handleSignupShow}
             />
-            <div class = "vertical-center">
+            <div className= "vertical-center">
             <LoginModal 
             show={show}
             handleClose={handleClose}

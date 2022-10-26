@@ -15,7 +15,7 @@ function LoginModal({handleShow, show, handleClose, handleLogin}){
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    console.log("hello")
+    
     fetch("/login", {
       method: "POST",
       headers: {

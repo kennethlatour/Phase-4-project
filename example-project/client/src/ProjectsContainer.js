@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom'
 import CreateProjects from "./CreateProjects";
+import NavigationBar from "./NavigationBar";
 import Projects from "./Projects";
+
 import "./ProjectsContainer.css"
 
 
@@ -9,11 +11,25 @@ function ProjectsContainer(){
     const [ projects, setProjects ] = useState([])
     const history = useHistory();
 
+
+    function handleLogout(){
+        history.push(`/`)
+    }
+
     useEffect(() => {
         fetch("/projects")
         .then(res => res.json())
         .then(data => setProjects(data))
     }, [])
+
+    function handleDelete(){
+        fetch("/logout", {
+            method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then(data => {console.log(data)
+        handleLogout()})
+    }
 
     function handleCardClick(id) {
         history.push(`projects/${id}`)
@@ -25,11 +41,11 @@ function ProjectsContainer(){
     ))
 
   return(
-
-        <div className = "projectsContainer">
-            <ul className="projects">
+        <div>
+            <NavigationBar handleDelete={handleDelete}/>
+            <div className="projects">
             {showProjects}
-            </ul>
+            </div>
            
             <CreateProjects />
         </div>
