@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { useHistory } from "react-router-dom";
 
 
-function SignupModal({handleShow, show, handleClose}){
+function SignupModal({handleShow, show, handleClose, handleLogin}){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -29,8 +30,11 @@ function SignupModal({handleShow, show, handleClose}){
       body: JSON.stringify(userData),
     })
     .then((r) => r.json())
-    .then((data) => console.log(data))
+    .then((data) => {console.log(data)
+    handleLogin()})
     }
+
+  
     
     return(
     <> 

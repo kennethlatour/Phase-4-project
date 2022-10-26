@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import './App.css'
-function LoginModal({handleShow, show, handleClose}){
+function LoginModal({handleShow, show, handleClose, handleLogin}){
   const [ loginData, setLoginData ] = useState({username: "", password: ""})
 
   const handleOnChange = (event) => {
@@ -24,7 +24,8 @@ e.preventDefault()
       body: JSON.stringify(loginData)
   })
   .then((res) => res.json())
-  .then((data) => console.log(data))
+  .then((data) => {console.log(data)
+    handleLogin()})
   }
 
 
