@@ -6,14 +6,8 @@ import './Projects.css'
 function Projects({project, handleCardClick}){
 
   
-    //move into project page
-    // const deleteProject = (id) => {
-    //     fetch(`/projects/${id}`, {
-    //         method: "DELETE",
-    //     })
-    // }   
- 
-     
+
+
 
    const projectContributers = project.users.map((user) => <p>{user.username}</p>)
 
@@ -24,7 +18,7 @@ function Projects({project, handleCardClick}){
             {/* <p>{project.description}</p> 
             <p>Contributers: {projectContributers}</p>  */}
           
-            {/* <button onClick={() => deleteProject(project.id)}>Delete</button> */}
+            
         </div>
     )
 }

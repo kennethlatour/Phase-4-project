@@ -11,10 +11,7 @@ function Home( { handleLogin } ){
     const handleShow = () => setShow(true);
     const handleSignupShow = () => setSignupShow(true)
     const handleSignupClose = () => setSignupShow(false);
-    
-
-
-
+//Will have a signup and login modal
     return (
         <>
         <div id = "login">
@@ -23,14 +20,12 @@ function Home( { handleLogin } ){
             show={signupShow}
             handleClose={handleSignupClose}
             handleShow={handleSignupShow}
-            handleLogin={handleLogin}
             />
             <div className= "vertical-center">
             <LoginModal 
             show={show}
             handleClose={handleClose}
             handleShow={handleShow}
-            handleLogin={handleLogin}
             />
             </div>
             
