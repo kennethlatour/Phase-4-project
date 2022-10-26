@@ -1,4 +1,15 @@
 .projects {
-
-    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: whitesmoke;  
+    list-style-type: none;
+    align-items: center;
+    display: inline-flexbox;
+    padding-left: 13.5%;
+}
+.projectsContainer {
+    width: 100vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: center;
 }

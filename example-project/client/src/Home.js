@@ -4,19 +4,14 @@ import SignupModal from './SignupModal';
 import CreateProjects from './CreateProjects';
 import { useHistory } from "react-router-dom";
 import './App.css'
-function Home(){
+function Home( { handleLogin } ){
     const [show, setShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleSignupShow = () => setSignupShow(true)
     const handleSignupClose = () => setSignupShow(false);
-    
-    const history = useHistory()
-
-    function handleLogin(){
-        history.push(`/projects`)
-      }
+//Will have a signup and login modal
     return (
         <>
         <div id = "login">
@@ -25,14 +20,12 @@ function Home(){
             show={signupShow}
             handleClose={handleSignupClose}
             handleShow={handleSignupShow}
-            handleLogin={handleLogin}
             />
             <div class = "vertical-center">
             <LoginModal 
             show={show}
             handleClose={handleClose}
             handleShow={handleShow}
-            handleLogin={handleLogin}
             />
             </div>
             

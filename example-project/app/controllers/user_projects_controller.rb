@@ -6,7 +6,8 @@ class UserProjectsController < ApplicationController
     end
     
     def create
-        user_project = UserProject.create!(user_project_params)
+        user = User.find_by(username: params[:username])
+        user_project = UserProject.create!(user: user, project_id: params[:project_id])
         render json: user_project, status: :created
     end
     
