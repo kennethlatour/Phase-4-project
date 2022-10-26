@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
+Project.destroy_all
+UserProject.destroy_all
+Image.destroy_all
 
 puts 'seeding!'
 # users
@@ -26,4 +30,12 @@ project_user4 = UserProject.create(project: project2, user: user4)
 project_user5 = UserProject.create(project: project3, user: user3)
 project_user6 = UserProject.create(project: project4, user: user2)
 project_user7 = UserProject.create(project: project5, user: user1)
+
+image1 = Image.create(url: "https://www.dogtime.com/assets/uploads/2018/10/wiener-dog-dachshund-costumes-halloween-1-1280x720.jpg", description: "Dog dressed up at a weiner dog", project: project1)
+image2 = Image.create(url: "https://i.pinimg.com/736x/33/2b/76/332b76cac7237a858c1eacdd12b28197--halloween-costumes-for-dogs-dog-costumes.jpg", description: "Dog dressed up as a vampire", project: project1 )
+image3 = Image.create(url: "https://images3.teeshirtpalace.com/images/productImages/hhd8761903-happy-halloween-dachshund-dog-skeleton-costume--white-yas-garment.jpg?crop=1151,1151,x450,y366&width=1500", description: "Logo", project: project1 )
+image3 = Image.create(url: "https://garden.spoonflower.com/c/12106776/p/f/m/RbJLg5UhNHGOJ2-_JQ4hsF6T0iuj8hGB1BDwyB7nLBArptrn1w00K2uIag/Dachshund%20Halloween%20Purple.jpg", description: "Logo", project: project1 )
+image4 = Image.create(url: "https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1", description: "logo", project: project2)
+image5 = Image.create(url: "https://competition-forum.com/wp-content/uploads/2021/09/google-76517_1280.png", description: "search bar", project: project2)
+image6 = Image.create(url: "https://t3.ftcdn.net/jpg/04/42/53/70/360_F_442537048_5zWvg9dvVOt4X8G7rSBA4wKptwicXtoU.jpg", description: "dark mode", project: project2)
 puts 'done seeding'

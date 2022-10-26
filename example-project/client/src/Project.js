@@ -10,6 +10,7 @@ function Project(){
     const [ errors , setErrors] = useState([])
     const [ collaborators, setCollaborators ] = useState([])
     const [ showCollab, setShowCollab ] = useState(false)
+    const [ images, setImages ] = useState([])
     const history = useHistory()
     // const [ showCollab, setShowCollab ] = useState([])
    
@@ -25,10 +26,11 @@ function Project(){
         //     console.log(user.username)
         // })
         setCollaborators(project.users)
+        setImages(project.images)
         })
       }, [])
 
-      console.log(collaborators)
+      
       
 
      const handleChange = (event) => {
@@ -94,7 +96,7 @@ function Project(){
                 : null }
             </div>
             <div>
-                <Images />
+                <Images images={images} />
             </div>
             <div>
                 <button onClick={() => deleteProject(project.id)}>Delete</button> 
