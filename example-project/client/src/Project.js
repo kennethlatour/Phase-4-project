@@ -81,6 +81,8 @@ function Project(){
 
     return(
         <div>
+            <h1>{project.name}</h1>
+            <h5>{project.description}</h5>
             <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
             <button onClick={() => setShowCollab(true)}>Add Collaborators</button>
             <div>
