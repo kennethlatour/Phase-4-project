@@ -20,10 +20,7 @@ function Projects({project, handleCardClick}){
             <h3>{project.name}</h3>
             <img src={project.thumbnail} alt="thumbnail"/> 
             <p>{project.description}</p> 
-            <p>Contributers: {projectContributers}</p>
-            <div className="project-photos">
-                
-            </div>
+            <p>Contributers: {projectContributers}</p> 
           
             {/* <button onClick={() => deleteProject(project.id)}>Delete</button> */}
         </div>

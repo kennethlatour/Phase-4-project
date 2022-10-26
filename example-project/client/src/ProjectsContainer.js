@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useHistory } from "react";
 import CreateProjects from "./CreateProjects";
 import Projects from "./Projects";
 import "./ProjectsContainer.css"
@@ -6,8 +6,7 @@ import "./ProjectsContainer.css"
 
 function ProjectsContainer(){
     const [ projects, setProjects ] = useState([])
-   
-
+    const history = useHistory();
 
     useEffect(() => {
         fetch("/projects")
@@ -15,8 +14,13 @@ function ProjectsContainer(){
         .then(data => setProjects(data))
     }, [])
 
+    function handleCardClick(id) {
+        history.push(`project/${id}`)
+      }
+    
+
     const showProjects = projects.map((project) => (
-        <Projects key={project.id} project={project}/>
+        <Projects key={project.id} project={project} handleCardClick={handleCardClick}/>
     ))
 
   return(
