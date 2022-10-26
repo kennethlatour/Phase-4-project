@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import CreateProjects from './CreateProjects';
+import { useHistory } from "react-router-dom";
 import './App.css'
-function Home(){
+function Home( { handleLogin } ){
     const [show, setShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -11,31 +12,29 @@ function Home(){
     const handleSignupShow = () => setSignupShow(true)
     const handleSignupClose = () => setSignupShow(false);
 //Will have a signup and login modal
-return (
-    <>
-    <div id = "login">
-        <div class = "vertical-center">
-        <SignupModal
-        show={signupShow}
-        handleClose={handleSignupClose}
-        handleShow={handleSignupShow}
-        handleLogin={handleLogin}
-        />
-        <div class = "vertical-center">
-        <LoginModal 
-        show={show}
-        handleClose={handleClose}
-        handleShow={handleShow}
-        handleLogin={handleLogin}
-        />
+    return (
+        <>
+        <div id = "login">
+            <div class = "vertical-center">
+            <SignupModal
+            show={signupShow}
+            handleClose={handleSignupClose}
+            handleShow={handleSignupShow}
+            />
+            <div class = "vertical-center">
+            <LoginModal 
+            show={show}
+            handleClose={handleClose}
+            handleShow={handleShow}
+            />
+            </div>
+            
+            </div>
         </div>
-        
-        </div>
-    </div>
-      
-    </>
-);
-
+          
+        </>
+    );
+    
 }
 
 export default Home;

@@ -16,7 +16,7 @@ function ProjectsContainer(){
     }, [])
 
     function handleCardClick(id) {
-        history.push(`project/${id}`)
+        history.push(`projects/${id}`)
       }
     
 

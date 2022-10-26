@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import './App.css'
-function LoginModal({handleShow, show, handleClose}){
+function LoginModal({handleShow, show, handleClose, handleLogin}){
   const [ loginData, setLoginData ] = useState({username: "", password: ""})
 
   const handleOnChange = (event) => {
@@ -14,7 +14,7 @@ function LoginModal({handleShow, show, handleClose}){
   }
 
   const handleOnSubmit = (e) => {
-e.preventDefault()
+    e.preventDefault()
     console.log("hello")
     fetch("/login", {
       method: "POST",
@@ -22,9 +22,14 @@ e.preventDefault()
           "Content-Type": "application/json",
       },
       body: JSON.stringify(loginData)
-  })
-  .then((res) => res.json())
-  .then((data) => console.log(data))
+    })
+    .then((res) => {
+      if(res.ok) {
+        res.json().then(user => {
+          handleLogin(user)
+      })
+      }else{res.json().then(json => console.log(json.errors))} 
+    })
   }
 
 
