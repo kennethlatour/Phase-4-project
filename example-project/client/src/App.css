@@ -13,6 +13,22 @@
   z-index:1000;
 }
 
+.nav {
+  background-color: whitesmoke;
+  align-items: right;
+  text-align: right;
+  justify-content: right;
+  padding-right: 2%;
+  font-size: 50%;
+}
+
+#navImage {
+  width: 6%;
+  height: auto;
+  margin-right: 87%
+}
+
+
 #login {
   
   width: 100vw;
@@ -57,4 +73,13 @@ justify-content: center;
   font-family: 'Times New Roman', Times, serif;
   padding-left: 2%;
   padding-right: 2%;
+}
+input#input {
+  border-color: whitesmoke;
+}
+#colorgenerator {
+  display: inline-flex;
+}
+#create {
+  padding-left: 20%;
 }

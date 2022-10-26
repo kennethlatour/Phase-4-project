@@ -44,7 +44,7 @@ function CreateProjects (){
 
     return(
         <div className="project-form-page">
-            <h2>Create a New Project</h2>
+            <h2>Build a Visual</h2>
             <Form className="project-form" onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="text" name="name" value={formData.name} onChange={handleFormChange} placeholder="Project name"/>
@@ -57,16 +57,16 @@ function CreateProjects (){
                 </Form.Group>
                 <Form.Group className="mb-3" id="color-gen">
                 <div id = "colorgenerator">
-            <label for="input">Selection</label>
+            <label for="input"> <h2>Color Picker</h2> </label>
             <input onChange = {handleChange} type="color" id ="input"  className="color"></input>
-         
+            <Button id = "create" variant="primary" type="submit">
+                     <h2>Create</h2>
+                </Button>
+                
             </div>
                 </Form.Group>
              
-                <Button variant="primary" type="submit">
-                     Create
-                </Button>
-                
+               
             </Form>
         </div>
     )

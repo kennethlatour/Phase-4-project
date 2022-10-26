@@ -13,8 +13,10 @@ function Projects({project, handleCardClick}){
 
     return(
         <div  onClick={() => handleCardClick(project.id)} className="project">
-            <h3 className = "header">{project.name}</h3>
+            
+            <h2 className = "header">{project.name} </h2>
             <img id = "img" src={project.thumbnail} alt="thumbnail"/> 
+            <p>{project.description}</p> 
             {/* <p>{project.description}</p> 
             <p>Contributers: {projectContributers}</p>  */}
           
