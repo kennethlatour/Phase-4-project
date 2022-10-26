@@ -5,17 +5,23 @@ import ProjectsContainer from "./ProjectsContainer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Project from "./Project";
+import { useHistory } from "react-router-dom";
 
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({})
 
-
+  function handleLogin(user){
+    history.push(`/projects`)
+    setCurrentUser(user)
+  }
+  const history = useHistory()
 
   return (
   <div className="overlay">
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Home handleLogin={handleLogin} />
       </Route>
       <Route exact path="/projects">
         <ProjectsContainer />

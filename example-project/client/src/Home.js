@@ -4,7 +4,7 @@ import SignupModal from './SignupModal';
 import CreateProjects from './CreateProjects';
 import { useHistory } from "react-router-dom";
 import './App.css'
-function Home(){
+function Home( { handleLogin } ){
     const [show, setShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -12,11 +12,9 @@ function Home(){
     const handleSignupShow = () => setSignupShow(true)
     const handleSignupClose = () => setSignupShow(false);
     
-    const history = useHistory()
 
-    function handleLogin(){
-        history.push(`/projects`)
-      }
+
+
     return (
         <>
         <div id = "login">
