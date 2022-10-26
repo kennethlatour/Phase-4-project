@@ -14,17 +14,19 @@
 }
 
 #login {
-  margin-top: 1%;
   
-  height: 200px;
+  width: 100vw;
+    height: 100vh;
   position: relative;
   
 }
 .vertical-center {
-   
-  margin-right: 8%;
-  top: 50%;
- 
+  width: 100vw;
+  height: 100vh;
+
+
+justify-content: center;
+
 }
 .btn.btn-primary {
   background-color: rgba(95, 95, 95, 0);
@@ -33,13 +35,14 @@
   color: black;
   border-radius: 0%;
   font-style: italic;
-  font-size: 200%;
+  font-size: 325%;
   text-align: right;
-  
+ 
   
 }
 .btn.btn-primary:hover{
-  background-color: rgba(95, 95, 95, 0.676);
+  background-color: rgba(95, 95, 95, 0);
+  color: rgba(95, 95, 95, 0.953);
 }
 .btn.btn-primary:active{
   background-color: rgba(95, 95, 95, 0.87);
@@ -48,4 +51,10 @@
   background-color: rgba(95, 95, 95, 0.686);
   font-family: 'Times New Roman', Times, serif;
   border-radius: 0%;
+}
+.project-form-page {
+  background-color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 2%;
+  padding-right: 2%;
 }

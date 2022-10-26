@@ -18,7 +18,7 @@ function App() {
   const history = useHistory()
 
   return (
-  <div className="overlay">
+  <div >
     <Switch>
       <Route exact path="/">
         <Home handleLogin={handleLogin} />
