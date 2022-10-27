@@ -15,8 +15,8 @@
     font-style: italic;
     font-size: 325%;
     text-align: right;
-   
-    
+    font-size: 30px;
+    padding-left: 5%;
   }
  .btn-primary:hover{
     background-color: rgba(95, 95, 95, 0);
@@ -24,13 +24,51 @@
   }
 
   .images {
-    width: 200px;
-    height:auto;
-    border-radius: 10%;
+    margin: 5px;
+    padding: 5px;
+    /* float:right; */
+   
   }
  
 .image-container {
+    
+    display: flexbox;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
+    
+}
+
+.heading {
+    word-break:break-all;
+    display: flexbox;
+    width: 1px;
+    margin-left: 4.5%;
+    font-size: 400% ;
+    float:left;
+}
+
+.topPage {
+ text-align: inherit;
+   
+}
+
+.bottomPage {
+   background-color: whitesmoke;
+  
+   font-size: 10px;
+   
+}
+
+.descript {
+    float: left;
+    padding-left: 5%;
+   
+    
+}
+.colorDelete {
+    float:right;
+    padding-right: 5%;
+    padding-left: 15%;
 }

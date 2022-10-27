@@ -34,6 +34,11 @@ export default function Images ({images, updateImages}) {
 
     return (
         <div>
+            <div className="image-container">
+                {images.map((image) => (
+                    <img class = "images" src={image.url}/>
+                ))}
+            </div>
             <button class = "btn-primary" onClick={()=>setShowAddImage(true)}>Add Images</button>
             {showAddImage ?
             <div>
@@ -46,11 +51,7 @@ export default function Images ({images, updateImages}) {
             : null
             }
 
-            <div className="image-container">
-                {images.map((image) => (
-                    <img class = "images" src={image.url}/>
-                ))}
-            </div>
+            
     
         </div>
     )

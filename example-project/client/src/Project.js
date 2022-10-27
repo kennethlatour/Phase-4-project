@@ -3,6 +3,8 @@ import React, {useEffect, useState} from "react";
 import Images from './Images';
 import { useHistory } from 'react-router-dom'
 import './Project.css'
+import NavigationBar from "./NavigationBar";
+
 
 
 function Project(){
@@ -112,12 +114,33 @@ function Project(){
             history.push('/projects')
         })
     }   
+   
+
+
+    function handleLogout(){
+        history.push(`/`)
+    }
+    function handleDelete(){
+        fetch("/logout", {
+            method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then(data => {console.log(data)
+        handleLogout()})
+    }
 
     return(
         <div className = "projectCont">
-            <h1>{project.name}</h1>
-            <h5>{project.description}</h5>
-            <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
+        <div >
+        <NavigationBar handleDelete={handleDelete}/>
+            {/* <div> <img className ="navImage" src ="https://i.postimg.cc/7PRHmXfx/Visualize-logo.png"/> </div> */}
+            <div className = "topPage">
+            <h1 className = "heading">{project.name}</h1>
+            <div>
+                <Images images={images} projectId={project.id} updateImages={updateImages}/>
+            </div>
+            </div>
+            <div className= "bottomPage">
             <button class = "btn-primary" onClick={() => setShowCollab(true)}>Add Collaborators</button>
             <div>
                 {showCollab ?
@@ -134,15 +157,18 @@ function Project(){
                 </div>
                 : null }
             </div>
-        
-            <div>
-                <Images images={images} projectId={project.id} updateImages={updateImages}/>
+            <div className = "descript">
+            <h5>{project.description}</h5>
+            <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
             </div>
-            <div>
-                <button  class = "btn-primary" onClick={() => deleteProject(project.id)}>Delete</button> 
+            <div className = "colorDelete">
+                
                 <input onChange = {editColor} type="color" id ="input" name = "color" value={colorBox}  className="color" ></input>
                 <button class = "btn-primary" onClick={patchColor}> Edit Color </button>
+                <button  class = "btn-primary" onClick={() => deleteProject(project.id)}>Delete</button> 
             </div>
+        </div>
+        </div>
         </div>
     )
 }
