@@ -4,8 +4,9 @@ import FormGroup from 'react-bootstrap/esm/FormGroup';
 import Form from 'react-bootstrap/Form';
 import './App.css'
 import "./CreateProjects.css"
+import Projects from './Projects';
 
-function CreateProjects ({currentUser}){
+function CreateProjects ({currentUser, projects, setProjects}){
     const [ formData, setFormData ] = useState({name: "", description: "", thumbnail: "", red: "", green: "", blue: ""})
     const [colorBox, setColorBox] = useState("#D3D3D3")
     console.log(currentUser)
@@ -47,19 +48,19 @@ function CreateProjects ({currentUser}){
                 project_id: id,
                 username: currentUser.username
             }
-
-        fetch("/user_projects", {
-            method: "POST",
-            headers: {
+            fetch("/user_projects", {
+                method: "POST",
+                headers: {
                 "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userProject)
+                },
+                body: JSON.stringify(userProject)
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                setProjects([...projects, data.project])
+                console.log(data.project)
+            })
         })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        })
-
-       
 
     }
 

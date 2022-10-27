@@ -24,7 +24,7 @@
 }
 
 .navImage {
-  width: 6%;
+  width: 7%;
   height: auto;
   margin-right: 85%; 
 }
@@ -40,11 +40,10 @@
 .vertical-center {
   width: 100vw;
   height: 100vh;
-
-
-justify-content: center;
-
+  justify-content: center;
+  margin-left: 20px;
 }
+
 .btn.btn-primary {
   background-color: rgba(95, 95, 95, 0);
   border-width: 0em;
@@ -52,9 +51,8 @@ justify-content: center;
   color: black;
   border-radius: 0%;
   font-style: italic;
-  font-size: 325%;
+  font-size: 275%;
   text-align: right;
- 
   
 }
 .btn.btn-primary:hover{
