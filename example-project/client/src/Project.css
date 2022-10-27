@@ -65,10 +65,13 @@
     float: left;
     padding-left: 5%;
    
-    
+    background-color: whitesmoke;
+  
 }
 .colorDelete {
     float:right;
     padding-right: 5%;
     padding-left: 15%;
+    background-color: whitesmoke;
+  
 }
