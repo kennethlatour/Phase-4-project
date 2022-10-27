@@ -7,7 +7,7 @@ function NavigationBar({handleDelete}){
 
     return(
         <div className= "nav">
-            <img id ="navImage" src = 'https://i.postimg.cc/7PRHmXfx/Visualize-logo.png' />
+            <img className ="navImage" src = 'https://i.postimg.cc/7PRHmXfx/Visualize-logo.png' />
            <Button variant="primary" onClick={handleDelete}>
           Logout
         </Button>

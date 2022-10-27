@@ -1,0 +1,79 @@
+.projectCont {
+
+    color: rgb(var(--color-one),var(--color-two),var(--color-three));
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.btn-primary {
+    background-color: rgba(95, 95, 95, 0);
+    border-width: 0em;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(var(--color-one),var(--color-two),var(--color-three));
+    border-radius: 0%;
+    font-style: italic;
+    font-size: 325%;
+    text-align: right;
+    font-size: 30px;
+    padding-left: 5%;
+  }
+ .btn-primary:hover{
+    background-color: rgba(95, 95, 95, 0);
+    color: rgba(95, 95, 95, 0.953);
+  }
+
+  .images {
+    margin: 5px;
+    padding: 5px;
+    /* float:right; */
+    width: 25% 
+   
+  }
+ 
+.image-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+
+.heading {
+    word-break:break-all;
+    display: flexbox;
+    width: 1px;
+    margin-left: 4.5%;
+    font-size: 400% ;
+    float:left;
+}
+
+.topPage {
+ text-align: inherit;
+ margin-top: 80px;
+   
+}
+
+.bottomPage {
+   background-color: whitesmoke;
+  
+   font-size: 10px;
+   
+}
+
+.descript {
+    float: left;
+    padding-left: 5%;
+   
+    
+}
+.colorDelete {
+    float:right;
+    padding-right: 5%;
+    padding-left: 15%;
+}

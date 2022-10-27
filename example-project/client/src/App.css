@@ -23,7 +23,7 @@
   font-size: 50%;
 }
 
-#navImage {
+.navImage {
   width: 6%;
   height: auto;
   margin-right: 85%; 
@@ -80,7 +80,4 @@ input#input {
 }
 #colorgenerator {
   display: inline-flex;
-}
-#create {
-  padding-left: 20%;
 }
