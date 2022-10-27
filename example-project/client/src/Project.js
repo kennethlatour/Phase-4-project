@@ -64,9 +64,15 @@ function Project(){
                     body: JSON.stringify(colors)
                 })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    console.log(data)
+                    setColors({red: data.red, green: data.green, blue: data.blue})
+                    window.location.reload(true);
+        })
                
         }
+
+        console.log(colors)
     
     
       const updateImages = (image) => {
@@ -147,9 +153,15 @@ return(
     return(
         <div className = "projectCont">
         <div>
-        <NavigationBar handleDelete={handleDelete}/>
+            <div className='nav-bar'>
+                <NavigationBar handleDelete={handleDelete}/>
+            </div>
             {/* <div> <img className ="navImage" src ="https://i.postimg.cc/7PRHmXfx/Visualize-logo.png"/> </div> */}
             <div className = "topPage">
+            <div class="head">
+                <button id="delete" class = "btn-primary" onClick={() => deleteProject(project.id)}>Delete</button> 
+            </div>
+            <h5 className='description'>{project.description}</h5>
             <h1 className = "heading">{String(project.name).toUpperCase()}</h1>
             <div>
                 <Images images={images} projectId={project.id} updateImages={updateImages}/>
@@ -160,9 +172,9 @@ return(
             <div>
                 {showCollab ?
                 <div>  
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="username" value={userData.username} onChange={handleChange} placeholder="Username"/>
-                        <input type="submit" value="Add"/>
+                    <form className="collab-form" onSubmit={handleSubmit}>
+                        <input type="text" id="collab-input" name="username" value={userData.username} onChange={handleChange} placeholder="Username"/>
+                        <input type="submit" id="add-collab" value="Add"/>
                     </form>
                     {errors.map((err) => (
                         <p key={err} style={{ color: "red" }}>
@@ -173,10 +185,10 @@ return(
                 : null }
             </div>
             <div className = "descript">
-            <h5>{project.description}</h5>
-            <p>Collaborators:</p>{collaborators.map((user) => 
+            
+            <p>Collaborators: </p>{collaborators.map((user) => 
             { return(<>
-               <p >{user.username} </p>
+               <p >{` ${user.username} `}</p>
                <CloseButton onClick={() => handleCollabRemove(user, userProjects1)}/>
                 </>)})}
             
@@ -185,7 +197,7 @@ return(
                 
                 <input onChange = {editColor} type="color" id ="input" name = "color" value={colorBox}  className="color" ></input>
                 <button class = "btn-primary" onClick={patchColor}> Edit Color </button>
-                <button  class = "btn-primary" onClick={() => deleteProject(project.id)}>Delete</button> 
+               
             </div>
         </div>
         </div>

@@ -1,7 +1,5 @@
 .projectCont {
-
     color: rgb(var(--color-one),var(--color-two),var(--color-three));
-    background-color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
     width: 100vw;
     height: 100vh;
@@ -18,62 +16,95 @@
     font-size: 325%;
     text-align: right;
     font-size: 30px;
-    padding-left: 5%;
   }
+
  .btn-primary:hover{
     background-color: rgba(95, 95, 95, 0);
     color: rgba(95, 95, 95, 0.953);
   }
 
-  .images {
-    margin: 5px;
-    padding: 5px;
-    /* float:right; */
-    width: 25% 
-   
-  }
+
  
 .image-container {
+    margin-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
     display: flexbox;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-    
+    min-height: 850px;
 }
 
 .heading {
     word-break:break-all;
     display: flexbox;
     width: 1px;
-    margin-left: 4.5%;
     font-size: 400% ;
     float:left;
+    padding-top: 20px;
 }
+/* 
+.head {
+    display: inline-flex;
+    width: 100%;
+} */
+#delete {
+    color: black;
+    float: right;
+    margin-right: 4.5%;
+}
+
 
 .topPage {
  text-align: inherit;
  margin-top: 80px;
-   
+ min-height: 800px;
+ margin-left: 4.5%;
 }
 
 .bottomPage {
-   background-color: whitesmoke;
-  
-   font-size: 10px;
-   
+    margin-top: 50px; 
+   font-size: 14px;
+   margin-left: 4.5%;
 }
 
 .descript {
+    margin-top: 5px;
     float: left;
-    padding-left: 5%;
-   
-    
+    display: flex;
 }
+
+.descript p {
+    padding-right: 5px;
+    color: black;
+}
+
 .colorDelete {
-    float:right;
-    padding-right: 5%;
+    float: right; 
+    padding-right: 5%; 
     padding-left: 15%;
+    margin-bottom: 30px;
+    margin-top: -200px;
+}
+
+
+.collab-form input {
+    border: 0.5px solid black;
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.collab-form input:focus {
+    background-color: white;
+    outline: 0;
+}
+
+.collab-form #add-collab {
+    width: 50px;
+}
+
+.collab-form #collab-input {
+    width: 230px;
 }
