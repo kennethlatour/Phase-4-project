@@ -135,7 +135,7 @@ function Project(){
         <NavigationBar handleDelete={handleDelete}/>
             {/* <div> <img className ="navImage" src ="https://i.postimg.cc/7PRHmXfx/Visualize-logo.png"/> </div> */}
             <div className = "topPage">
-            <h1 className = "heading">{project.name}</h1>
+            <h1 className = "heading">{String(project.name).toUpperCase()}</h1>
             <div>
                 <Images images={images} projectId={project.id} updateImages={updateImages}/>
             </div>
