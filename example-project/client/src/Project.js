@@ -121,12 +121,8 @@ function Project(){
             history.push('/projects')
         })
     }   
-    
-    const userProjects1 = userProjects.map((user) =>{
-return(
-    user.project_id
-)
- })
+
+
 
 
     function handleCollabRemove(user){
@@ -189,7 +185,7 @@ return(
             <p>Collaborators: </p>{collaborators.map((user) => 
             { return(<>
                <p >{` ${user.username} `}</p>
-               <CloseButton onClick={() => handleCollabRemove(user, userProjects1)}/>
+               <CloseButton onClick={() => handleCollabRemove(user)}/>
                 </>)})}
             
             </div>
