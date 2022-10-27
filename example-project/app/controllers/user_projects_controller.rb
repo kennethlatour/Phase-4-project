@@ -13,7 +13,7 @@ class UserProjectsController < ApplicationController
     
     def show
         user_project = find_user_project
-        render json: user_project, status: :ok
+        render json: user_project, include: :user, status: :ok
     end
     
     def update

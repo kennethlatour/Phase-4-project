@@ -4,6 +4,8 @@ import Images from './Images';
 import { useHistory } from 'react-router-dom'
 import './Project.css'
 import NavigationBar from "./NavigationBar";
+import Button from 'react-bootstrap/Button';
+import CloseButton from 'react-bootstrap/CloseButton';
 
 
 
@@ -18,7 +20,7 @@ function Project(){
     const history = useHistory()
     const [colors, setColors] = useState ({red: "", green: "", blue: ""})
     const [colorBox, setColorBox] = useState("#D3D3D3")
-    // const [ showCollab, setShowCollab ] = useState([])
+    const [userProjects, setUserProjects] = useState([])
     
        
             document.documentElement.style.setProperty('--color-one', project.red )
@@ -26,20 +28,15 @@ function Project(){
             document.documentElement.style.setProperty('--color-three', project.blue ) 
        
    
-
     useEffect(() => {
         fetch(`/projects/${id}`)
         .then(res => res.json())
         .then(project => {
         setProject(project)
         
-        // project.users.map((user) => {
-           
-        //     setCollaborators([...collaborators, user.username])
-        //     console.log(user.username)
-        // })
         setCollaborators(project.users)
         setImages(project.images)
+        setUserProjects(project.user_projects)
         })
       }, [])
 
@@ -51,6 +48,10 @@ function Project(){
          const c = colorArray[0] 
 
         setColors({red: c.r, green: c.g, blue: c.b})
+    }
+
+    function handleCollabClick(){
+        setShowCollab(!showCollab)
     }
 
     function patchColor () {
@@ -114,8 +115,22 @@ function Project(){
             history.push('/projects')
         })
     }   
-   
+    
+    const userProjects1 = userProjects.map((user) =>{
+return(
+    user.project_id
+)
+ })
 
+
+    function handleCollabRemove(user){
+        const  filteredUserProjects = userProjects.filter((userProject) => userProject.user_id === user.id)
+        const deletedProject = filteredUserProjects[0]
+                fetch(`/user_projects/${deletedProject.id}`,{
+                    method : "DELETE"
+                }) 
+                setCollaborators(collaborators.filter(item => item.id !== deletedProject.user_id))               
+            }
 
     function handleLogout(){
         history.push(`/`)
@@ -141,7 +156,7 @@ function Project(){
             </div>
             </div>
             <div className= "bottomPage">
-            <button class = "btn-primary" onClick={() => setShowCollab(true)}>Add Collaborators</button>
+            <button class = "btn-primary" onClick={handleCollabClick}>Add Collaborators</button>
             <div>
                 {showCollab ?
                 <div>  
@@ -159,7 +174,12 @@ function Project(){
             </div>
             <div className = "descript">
             <h5>{project.description}</h5>
-            <p>Collaborators:{collaborators.map((user) => `${user.username} `)}</p>
+            <p>Collaborators:</p>{collaborators.map((user) => 
+            { return(<>
+               <p >{user.username} </p>
+               <CloseButton onClick={() => handleCollabRemove(user, userProjects1)}/>
+                </>)})}
+            
             </div>
             <div className = "colorDelete">
                 
