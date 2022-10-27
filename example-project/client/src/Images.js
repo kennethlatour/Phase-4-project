@@ -33,7 +33,7 @@ export default function Images ({images, updateImages}) {
     }
 
     return (
-        <div>
+        <div className='image-div'>
             <div className="image-container">
                 {images.map((image) => (
                     <img class = "images" src={image.url}/>
@@ -45,7 +45,7 @@ export default function Images ({images, updateImages}) {
             <form onChange={handleChange} onSubmit={submitImage}>
                 <input type="text" name="url" value={imageData.url} placeholder="URL"/>
                 <input type="text" name="description" value={imageData.description} placeholder="Description"/>
-                <input type="submit" value="Add"/>
+                <input type="submit" id="submit" value="Add"/>
             </form>
             </div>
             : null

@@ -1,10 +1,12 @@
 .projectCont {
+
     color: rgb(var(--color-one),var(--color-two),var(--color-three));
     background-color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
     width: 100vw;
     height: 100vh;
 }
+
 
 .btn-primary {
     background-color: rgba(95, 95, 95, 0);
@@ -27,11 +29,13 @@
     margin: 5px;
     padding: 5px;
     /* float:right; */
+    width: 25% 
    
   }
  
 .image-container {
-    
+    padding-left: 100px;
+    padding-right: 100px;
     display: flexbox;
     align-items: center;
     justify-content: center;
@@ -51,6 +55,7 @@
 
 .topPage {
  text-align: inherit;
+ margin-top: 80px;
    
 }
 
