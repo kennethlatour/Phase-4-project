@@ -44,15 +44,13 @@
     float:left;
     padding-top: 20px;
 }
-/* 
-.head {
-    display: inline-flex;
-    width: 100%;
-} */
+
+
 #delete {
     color: black;
     float: right;
-    margin-right: 4.5%;
+    margin-right: 2.2%;
+    margin-top: -10px;
 }
 
 
@@ -84,7 +82,7 @@
     float: right; 
     padding-right: 5%; 
     padding-left: 15%;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     margin-top: -200px;
 }
 
