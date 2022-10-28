@@ -42,7 +42,7 @@ function SignupModal({handleShow, show, handleClose, handleLogin}){
     })
     .then((r) => r.json())
     .then((data) => {handleLogin(data)
-    }), 5000)
+    }), 2000)
   }
     
 
