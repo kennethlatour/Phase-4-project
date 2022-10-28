@@ -56,13 +56,14 @@ function CreateProjects ({currentUser, projects, setProjects}){
                 body: JSON.stringify(userProject)
             })
             .then((res) => res.json())
-            .then((data) => {
-                setProjects([...projects, data.project])
-                console.log(data.project)
+            .then((res) => {
+                window.location.reload(true);
             })
         })
 
     }
+
+    console.log(projects)
 
 
     return(

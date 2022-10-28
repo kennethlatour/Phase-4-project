@@ -37,12 +37,13 @@ function ProjectsContainer({currentUser}){
     
 
     const showProjects = projects.map((project) => (
-        <Projects key={project.id} project={project} handleCardClick={handleCardClick}/>
+        <Projects project={project} handleCardClick={handleCardClick}/>
     ))
 
   return(
         <div className="project-container">
             <NavigationBar handleDelete={handleDelete}/>
+          
             <div className="projects">
             {showProjects}
             </div>

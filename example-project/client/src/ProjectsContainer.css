@@ -4,12 +4,17 @@
 }
 
 .projects {
-  margin-top: 20px;
+  /* margin-top: 20px;
     font-family: 'Times New Roman', Times, serif;
     list-style-type: none;
     align-items: center;
-    padding-left: 13.5%;
+    padding-left: 13.5%;  */
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 
