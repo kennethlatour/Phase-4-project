@@ -31,8 +31,20 @@ function SignupModal({handleShow, show, handleClose, handleLogin}){
     })
     .then((r) => r.json())
     .then((data) => {console.log(data)
-    handleLogin()})
-    }
+    })
+    setTimeout(()=> fetch("/login", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({username: userData.username,
+    password: userData.password})
+    })
+    .then((r) => r.json())
+    .then((data) => {handleLogin(data)
+    }), 5000)
+  }
+    
 
   
     
